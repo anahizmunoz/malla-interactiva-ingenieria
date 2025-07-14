@@ -6,12 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(r => r.json())
         .then(data => {
             Object.entries(data.semestres).forEach(([semestre, ramos]) => {
+                const columna = document.createElement("div");
+                columna.className = "semestre";
+
+                const titulo = document.createElement("h2");
+                titulo.textContent = `Semestre ${semestre}`;
+                columna.appendChild(titulo);
+
                 ramos.forEach(ramo => {
                     const div = document.createElement("div");
                     div.className = "ramo";
                     div.id = ramo.codigo;
 
-                    
                     const guardado = estadoGuardado[ramo.codigo];
                     const estado = typeof guardado === "object" ? guardado.estado : guardado || ramo.estado;
                     const nota = typeof guardado === "object" ? guardado.nota : ramo.nota;
@@ -32,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     };
 
-                    contenedor.appendChild(div);
+                    columna.appendChild(div);
                 });
+
+                contenedor.appendChild(columna);
             });
         });
 });
