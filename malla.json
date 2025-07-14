@@ -9,13 +9,6 @@
         "prerrequisitos": []
       },
       {
-        "codigo": "QIIM001E",
-        "nombre": "Química para Ingeniería",
-        "estado": "pendiente",
-        "nota": null,
-        "prerrequisitos": []
-      },
-      {
         "codigo": "FIS1514",
         "nombre": "Laboratorio de Dinámica",
         "estado": "pendiente",
@@ -28,20 +21,45 @@
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": []
+      }
+    ],
+    "2": [
+      {
+        "codigo": "MAT1620",
+        "nombre": "Cálculo II",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1610"]
       },
       {
-        "codigo": "ING1004",
-        "nombre": "Desafíos de la Ingeniería",
+        "codigo": "FIS1523",
+        "nombre": "Física I",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": []
       },
       {
-        "codigo": "FIL0001",
-        "nombre": "Filosofía, ¿Para qué?",
+        "codigo": "FIS1515",
+        "nombre": "Laboratorio de Electromagnetismo",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": []
+        "prerrequisitos": ["FIS1514"]
+      }
+    ],
+    "3": [
+      {
+        "codigo": "MAT1630",
+        "nombre": "Cálculo III",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1620"]
+      },
+      {
+        "codigo": "ELEC2001",
+        "nombre": "Fundamentos de Electricidad",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["FIS1523"]
       }
     ]
   }
