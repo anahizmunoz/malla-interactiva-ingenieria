@@ -1,41 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 2rem;
-    background: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: #f7f2fb;
+    color: #333;
 }
+
 h1 {
     text-align: center;
+    margin-bottom: 2rem;
+    color: #4c2a85;
 }
+
 #malla {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
 }
+
+.semestre {
+    background: #eae0f8;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.semestre h2 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #4c2a85;
+}
+
 .ramo {
     border: 1px solid #ccc;
     padding: 10px;
     background: white;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s ease;
+    font-size: 0.9rem;
+    text-align: center;
 }
+
+.ramo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
 .ramo.aprobado {
     background-color: #d4edda;
     text-decoration: line-through;
 }
+
 .ramo.desbloqueado {
     background-color: #fff3cd;
 }
+
 .ramo.pendiente {
     background-color: #f8d7da;
-}
-.semestre {
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 1rem;
-}
-.semestre h2 {
-    grid-column: span 8;
-    font-size: 1.2rem;
-    color: #333;
 }
