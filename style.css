@@ -29,3 +29,13 @@ h1 {
 .ramo.pendiente {
     background-color: #f8d7da;
 }
+.semestre {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+}
+.semestre h2 {
+    grid-column: span 8;
+    font-size: 1.2rem;
+    color: #333;
+}
