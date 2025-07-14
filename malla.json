@@ -1,13 +1,48 @@
 {
   "semestres": {
     "1": [
-      {"codigo": "MAT1610", "nombre": "Cálculo I", "estado": "pendiente", "nota": null, "prerrequisitos": []},
-      {"codigo": "QIIM001E", "nombre": "Química para Ingeniería", "estado": "pendiente", "nota": null, "prerrequisitos": []},
-      {"codigo": "FIS1514", "nombre": "Laboratorio de Dinámica", "estado": "pendiente", "nota": null, "prerrequisitos": []},
-      {"codigo": "MAT1203", "nombre": "Álgebra Lineal", "estado": "pendiente", "nota": null, "prerrequisitos": []},
-      {"codigo": "ING1004", "nombre": "Desafíos de la Ingeniería", "estado": "pendiente", "nota": null, "prerrequisitos": []},
-      {"codigo": "FIL0001", "nombre": "Filosofía, ¿Para qué?", "estado": "pendiente", "nota": null, "prerrequisitos": []}
+      {
+        "codigo": "MAT1610",
+        "nombre": "Cálculo I",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      },
+      {
+        "codigo": "QIIM001E",
+        "nombre": "Química para Ingeniería",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      },
+      {
+        "codigo": "FIS1514",
+        "nombre": "Laboratorio de Dinámica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      },
+      {
+        "codigo": "MAT1203",
+        "nombre": "Álgebra Lineal",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      },
+      {
+        "codigo": "ING1004",
+        "nombre": "Desafíos de la Ingeniería",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      },
+      {
+        "codigo": "FIL0001",
+        "nombre": "Filosofía, ¿Para qué?",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": []
+      }
     ]
-    // Agrega aquí los demás semestres, te lo puedo entregar completo luego
   }
 }
