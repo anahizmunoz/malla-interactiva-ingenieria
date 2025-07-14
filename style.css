@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background: #f5f5f5;
+}
+h1 {
+    text-align: center;
+}
+#malla {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+.ramo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.ramo.aprobado {
+    background-color: #d4edda;
+    text-decoration: line-through;
+}
+.ramo.desbloqueado {
+    background-color: #fff3cd;
+}
+.ramo.pendiente {
+    background-color: #f8d7da;
+}
