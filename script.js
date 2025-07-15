@@ -6,8 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(r => r.json())
         .then(data => {
             Object.entries(data.semestres)
-                .sort(([a], [b]) => Number(a) - Number(b)) // ordena los semestres
+                .sort(([a], [b]) => Number(a) - Number(b))
                 .forEach(([semestre, ramos]) => {
+                    const columna = document.createElement("div");
+                    columna.className = "semestre";
+                    const titulo = document.createElement("h3");
+                    titulo.textContent = `Semestre ${semestre}`;
+                    columna.appendChild(titulo);
+
                     ramos.forEach(ramo => {
                         const div = document.createElement("div");
                         div.className = "ramo";
@@ -19,18 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         `;
 
                         const estado = estadoGuardado[ramo.codigo] || ramo.estado;
-                        if (estado) div.classList.add(estado); // evita error si estado es undefined
+                        if (estado) div.classList.add(estado);
 
                         if (estado === "aprobado") {
                             div.querySelector(".nota").textContent = ramo.nota;
                         }
 
-                        // Agregar clase según tipo (plancomun, major, etc.)
                         if (ramo.tipo && typeof ramo.tipo === "string") {
                             div.classList.add(ramo.tipo);
                         }
 
-                        // Verificar prerrequisitos
                         const todosAprobados = ramo.prerrequisitos?.every(prer =>
                             estadoGuardado[prer] === "aprobado"
                         );
@@ -40,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             div.title = "Necesitas aprobar: " + ramo.prerrequisitos.join(", ");
                         }
 
-                        // Manejo del clic
                         div.onclick = () => {
                             if (div.classList.contains("bloqueado")) return;
 
@@ -53,13 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                 div.querySelector(".nota").textContent = nota;
                                 estadoGuardado[ramo.codigo] = "aprobado";
                                 localStorage.setItem("estadoMalla", JSON.stringify(estadoGuardado));
-                                location.reload(); // actualiza visualmente los desbloqueos
+                                location.reload();
                             }
                         };
 
-                        contenedor.appendChild(div);
+                        columna.appendChild(div);
                     });
+
+                    contenedor.appendChild(columna);
                 });
         });
 });
+
 
