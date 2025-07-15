@@ -2,7 +2,7 @@ body {
     font-family: 'Times New Roman', sans-serif;
     margin: 0;
     padding: 2rem;
-    background: #e6dbf3; /* fondo lavanda */
+    background: #d3c2f3; 
     color: #333;
 }
 
@@ -19,7 +19,7 @@ h1 {
 }
 
 .semestre {
-    background: #dcd6f7;
+    background: #aeb8ff;
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
