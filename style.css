@@ -84,8 +84,8 @@ h1 {
 }
 .logo-uc {
     position: fixed;
-    top: 50px;
-    right: 50px;
+    top: 20px;
+    right: 20px;
     width: 1500px;
     opacity: 0.85;
     z-index: 1000;
