@@ -82,9 +82,3 @@ h1 {
 .ramo.minor {
     background-color: #f9f0c3; 
 }
-.ramo.bloqueado {
-    opacity: 0.4;
-    pointer-events: none;
-    filter: grayscale(100%);
-}
-
