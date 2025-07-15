@@ -49,22 +49,21 @@ h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Estados */
+
 .ramo.aprobado {
-    background-color: #d0f0c0; /* verde pastel */
+    background-color: #d0f0c0;
     text-decoration: line-through;
 }
 .ramo.pendiente {
-    background-color: #f9d5e5; /* rosado pastel */
+    background-color: #f9d5e5; 
 }
 .ramo.desbloqueado {
-    background-color: #fff6b7; /* amarillo clarito */
+    background-color: #fff6b7;
 }
 
-/* Opcional: estilos por tipo (si decides usar más adelante) */
 .ramo.electrica {
-    background-color: #c8d6f7; /* azul lavanda */
+    background-color: #c8d6f7;
 }
 .ramo.general {
-    background-color: #e0c3fc; /* formación general */
+    background-color: #e0c3fc; 
 }
