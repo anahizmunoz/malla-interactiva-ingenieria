@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     div.innerHTML = `<strong>${ramo.codigo}</strong><br>${ramo.nombre}<br><small class="nota">${nota || ""}</small>`;
                     div.classList.add(estado);
+                    if (ramo.tipo) {
+                        div.classList.add(ramo.tipo); // ← Esto le agrega la clase visual
+                    }
 
+                    
                     div.onclick = () => {
                         const nuevaNota = prompt("¿Con qué nota aprobaste este ramo?", nota || "");
                         if (nuevaNota) {
