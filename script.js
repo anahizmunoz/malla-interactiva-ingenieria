@@ -5,18 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("malla.json")
         .then(r => r.json())
         .then(data => {
+            // Ordenamos por número de semestre
             Object.entries(data.semestres)
                 .sort(([a], [b]) => Number(a) - Number(b))
                 .forEach(([semestre, ramos]) => {
                     const columna = document.createElement("div");
                     columna.className = "semestre";
-                    const titulo = document.createElement("h3");
+
+                    const titulo = document.createElement("h2");
                     titulo.textContent = `Semestre ${semestre}`;
                     columna.appendChild(titulo);
 
                     ramos.forEach(ramo => {
                         const div = document.createElement("div");
-                        div.className = "ramo";
+                        div.classList.add("ramo");
                         div.id = ramo.codigo;
                         div.innerHTML = `
                             <strong>${ramo.codigo}</strong><br>
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
 
                         if (ramo.tipo && typeof ramo.tipo === "string") {
-                            div.classList.add(ramo.tipo);
+                            div.classList.add(ramo.tipo.toLowerCase());
                         }
 
                         const todosAprobados = ramo.prerrequisitos?.every(prer =>
@@ -51,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             if (nota) {
                                 div.className = `ramo aprobado`;
                                 if (ramo.tipo && typeof ramo.tipo === "string") {
-                                    div.classList.add(ramo.tipo);
+                                    div.classList.add(ramo.tipo.toLowerCase());
                                 }
                                 div.querySelector(".nota").textContent = nota;
                                 estadoGuardado[ramo.codigo] = "aprobado";
@@ -67,5 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
         });
 });
-
-
