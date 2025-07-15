@@ -16,19 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         <small class="nota">${ramo.nota || ""}</small>
                     `;
 
-                    const estado = estadoGuardado[ramo.codigo] || ramo.estado;
-                    div.classList.add(estado);
+                    
+                    const estadoRaw = estadoGuardado[ramo.codigo];
+                    const estado = typeof estadoRaw === "string" ? estadoRaw : ramo.estado;
+                    if (estado) {
+                        div.classList.add(estado);
+                    }
 
                     if (estado === "aprobado") {
                         div.querySelector(".nota").textContent = ramo.nota;
                     }
 
-                    // Agregar clase según tipo (plancomun, major, etc.)
+               
                     if (ramo.tipo) {
                         div.classList.add(ramo.tipo);
                     }
 
-                    // Verificar prerrequisitos
+                    
                     const todosAprobados = ramo.prerrequisitos.every(prer =>
                         estadoGuardado[prer] === "aprobado"
                     );
@@ -38,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         div.title = "Necesitas aprobar: " + ramo.prerrequisitos.join(", ");
                     }
 
-                    // Manejo del clic
+                    
                     div.onclick = () => {
                         if (div.classList.contains("bloqueado")) return;
 
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             div.querySelector(".nota").textContent = nota;
                             estadoGuardado[ramo.codigo] = "aprobado";
                             localStorage.setItem("estadoMalla", JSON.stringify(estadoGuardado));
-                            location.reload(); // actualiza visualmente los desbloqueos
+                            location.reload(); 
                         }
                     };
 
