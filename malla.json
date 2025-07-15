@@ -52,7 +52,15 @@
         "tipo": "plancomun"
       },
       {
-        "codigo": "FIS1515",
+        "codigo": "FIS1514",
+        "nombre": "Dinámica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1610"],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "FIS0154",
         "nombre": "Laboratorio de Dinámica",
         "estado": "pendiente",
         "nota": null,
@@ -60,12 +68,28 @@
         "tipo": "plancomun"
       },
       {
-        "codigo": "ICE2623",
-        "nombre": "Introducción a la Geología Física",
+        "codigo": "IIC1103",
+        "nombre": "Introducción a la Programación",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
         "tipo": "plancomun"
+      },
+      {
+        "codigo": "AGC220",
+        "nombre": "Flora Nativa",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "TTF069",
+        "nombre": "Espiritú Santo: Presencia y Acción",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
       }
     ],
     "3": [
@@ -102,16 +126,16 @@
         "tipo": "plancomun"
       },
       {
-        "codigo": "AGC220",
-        "nombre": "Flora Nativa",
+        "codigo": "IEE1100",
+        "nombre": "Introducción a la Ingeniería Eléctrica",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
         "tipo": "plancomun"
       },
       {
-        "codigo": "IEE1100",
-        "nombre": "Introducción a la Ingeniería Eléctrica",
+        "codigo": "ICE2623",
+        "nombre": "Introducción a la Geología Física",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
@@ -160,8 +184,8 @@
         "tipo": "major"
       },
       {
-        "codigo": "XXXX",
-        "nombre": "OFG",
+        "codigo": "MUC960",
+        "nombre": "La Experiencia de las Artes",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
@@ -244,8 +268,8 @@
         "tipo": "minor"
       },
       {
-        "codigo": "XXXX",
-        "nombre": "OFG",
+        "codigo": "GEO620",
+        "nombre": "Asia y América Latina",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
