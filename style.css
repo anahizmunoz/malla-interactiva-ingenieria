@@ -82,20 +82,6 @@ h1 {
 .ramo.minor {
     background-color: #f9f0c3; 
 }
-.logo-uc {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 1000px;
-    opacity: 0.85;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.logo-uc:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
 .ramo.bloqueado {
     opacity: 0.4;
     pointer-events: none;
