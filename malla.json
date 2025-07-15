@@ -251,6 +251,74 @@
         "prerrequisitos": [],
         "tipo": "ofg"
       }
+    ],
+     "7": [
+      {
+        "codigo": "IEE2473",
+        "nombre": "Laboratorio de Electrónica Analógica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2183", "IEE2413", "IEE2713"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2513",
+        "nombre": "Comunicaciones",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["EYP1113","IEE2103"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "MINOR",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "minor"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "OFG",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
+      }
+    ],
+     "8": [
+      {
+        "codigo": "IEE2913",
+        "nombre": "Capstone Major Eléctrica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2473"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "MINOR",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "minor"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "MINOR",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "minor"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "OFG",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
+      }
     ]
   }
 }
