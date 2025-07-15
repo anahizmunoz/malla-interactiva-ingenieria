@@ -67,3 +67,18 @@ h1 {
 .ramo.general {
     background-color: #e0c3fc; 
 }
+.ramo.plancomun {
+    background-color: #d6eaff; 
+}
+
+.ramo.ofg {
+    background-color: #fce0f7; 
+}
+
+.ramo.major {
+    background-color: #e0d9ff; 
+}
+
+.ramo.minor {
+    background-color: #f9f0c3; 
+}
