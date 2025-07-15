@@ -109,6 +109,48 @@
         "prerrequisitos": [],
         "tipo": "plancomun"
       }
+    ],
+     "4": [
+      {
+        "codigo": "ICS1513",
+        "nombre": "Introducción a la Economía",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "FIS1533",
+        "nombre": "Electricidad y Magnetismo",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1630"],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "FIS0153",
+        "nombre": "Laboratorio de Electricidad y Magnetismo",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "IEE2103",
+        "nombre": "Señales y Sistemas",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1640"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2123",
+        "nombre": "Circuitos Eléctricos",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1640"],
+        "tipo": "major"
+      }
     ]
   }
 }
