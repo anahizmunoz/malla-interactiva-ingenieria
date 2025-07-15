@@ -337,6 +337,14 @@
       },
       {
         "codigo": "XXXX",
+        "nombre": "MINOR",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "minor"
+      },
+      {
+        "codigo": "XXXX",
         "nombre": "OFG",
         "estado": "pendiente",
         "nota": null,
