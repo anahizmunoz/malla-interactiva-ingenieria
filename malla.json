@@ -18,14 +18,6 @@
         "tipo": "plancomun"
       },
       {
-        "codigo": "FIS1514",
-        "nombre": "Laboratorio de Dinámica",
-        "estado": "pendiente",
-        "nota": null,
-        "prerrequisitos": [],
-        "tipo": "plancomun"
-      },
-      {
         "codigo": "MAT1203",
         "nombre": "Álgebra Lineal",
         "estado": "pendiente",
@@ -94,6 +86,14 @@
         "tipo": "plancomun"
       },
       {
+        "codigo": "FIS0152",
+        "nombre": "Laboratorio de TermoDinámica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
         "codigo": "MAT1640",
         "nombre": "Ecuaciones Diferenciales",
         "estado": "pendiente",
@@ -104,6 +104,14 @@
       {
         "codigo": "AGC220",
         "nombre": "Flora Nativa",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "IEE1100",
+        "nombre": "Introducción a la Ingeniería Eléctrica",
         "estado": "pendiente",
         "nota": null,
         "prerrequisitos": [],
@@ -150,8 +158,99 @@
         "nota": null,
         "prerrequisitos": ["MAT1640"],
         "tipo": "major"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "OFG",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
+      }
+    ],
+     "5": [
+      {
+        "codigo": "EYP1113",
+        "nombre": "Probabilidad y Estadistica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1630"],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "IEE2113",
+        "nombre": "Teoría Electromagnética",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["FIS1533", "MAT1640"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2413",
+        "nombre": "Electrónica",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2123"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2183",
+        "nombre": "Laboratorio de Mediciones Electricas",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2123"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "ING2030",
+        "nombre": "Investigación, Innovación y Emprendimiento",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      }
+    ],
+     "6": [
+      {
+        "codigo": "IEE2613",
+        "nombre": "Control Automático",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2103"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2213",
+        "nombre": "Máquinas Eléctricas",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["IEE2123"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "IEE2713",
+        "nombre": "Sistemas Digitales",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1203"],
+        "tipo": "major"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "MINOR",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "minor"
+      },
+      {
+        "codigo": "XXXX",
+        "nombre": "OFG",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
       }
     ]
   }
 }
-
