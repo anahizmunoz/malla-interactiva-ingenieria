@@ -6,21 +6,48 @@
         "nombre": "Cálculo I",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": []
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "QIIM001E",
+        "nombre": "Química para Ingeniería",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
       },
       {
         "codigo": "FIS1514",
         "nombre": "Laboratorio de Dinámica",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": []
+        "prerrequisitos": [],
+        "tipo": "plancomun"
       },
       {
         "codigo": "MAT1203",
         "nombre": "Álgebra Lineal",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": []
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "ING1004",
+        "nombre": "Desafíos de la Ingeniería",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "FIL0001",
+        "nombre": "Filosofía, ¿Para qué?",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "ofg"
       }
     ],
     "2": [
@@ -29,21 +56,24 @@
         "nombre": "Cálculo II",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": ["MAT1610"]
-      },
-      {
-        "codigo": "FIS1523",
-        "nombre": "Física I",
-        "estado": "pendiente",
-        "nota": null,
-        "prerrequisitos": []
+        "prerrequisitos": ["MAT1610"],
+        "tipo": "plancomun"
       },
       {
         "codigo": "FIS1515",
-        "nombre": "Laboratorio de Electromagnetismo",
+        "nombre": "Laboratorio de Dinámica",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": ["FIS1514"]
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "ICE2623",
+        "nombre": "Introducción a la Geología Física",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
       }
     ],
     "3": [
@@ -52,15 +82,34 @@
         "nombre": "Cálculo III",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": ["MAT1620"]
+        "prerrequisitos": ["MAT1620"],
+        "tipo": "plancomun"
       },
       {
-        "codigo": "ELEC2001",
-        "nombre": "Fundamentos de Electricidad",
+        "codigo": "FIS1520",
+        "nombre": "Termodinámica",
         "estado": "pendiente",
         "nota": null,
-        "prerrequisitos": ["FIS1523"]
+        "prerrequisitos": [],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "MAT1640",
+        "nombre": "Ecuaciones Diferenciales",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": ["MAT1620"],
+        "tipo": "plancomun"
+      },
+      {
+        "codigo": "AGC220",
+        "nombre": "Flora Nativa",
+        "estado": "pendiente",
+        "nota": null,
+        "prerrequisitos": [],
+        "tipo": "plancomun"
       }
     ]
   }
 }
+
