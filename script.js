@@ -1,71 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const contenedor = document.getElementById("malla");
-    const estadoGuardado = JSON.parse(localStorage.getItem("estadoMalla")) || {};
-
-    fetch("malla.json")
-        .then(r => r.json())
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('malla.json')
+        .then(response => response.json())
         .then(data => {
-            // Ordenamos por número de semestre
-            Object.entries(data.semestres)
-                .sort(([a], [b]) => Number(a) - Number(b))
-                .forEach(([semestre, ramos]) => {
-                    const columna = document.createElement("div");
-                    columna.className = "semestre";
+            const mallaDiv = document.getElementById('malla');
+            const aprobados = new Set(); // ramos aprobados para ir desbloqueando
 
-                    const titulo = document.createElement("h2");
-                    titulo.textContent = `Semestre ${semestre}`;
-                    columna.appendChild(titulo);
-
-                    ramos.forEach(ramo => {
-                        const div = document.createElement("div");
-                        div.classList.add("ramo");
-                        div.id = ramo.codigo;
-                        div.innerHTML = `
-                            <strong>${ramo.codigo}</strong><br>
-                            ${ramo.nombre}<br>
-                            <small class="nota">${ramo.nota || ""}</small>
-                        `;
-
-                        const estado = estadoGuardado[ramo.codigo] || ramo.estado;
-                        if (estado) div.classList.add(estado);
-
-                        if (estado === "aprobado") {
-                            div.querySelector(".nota").textContent = ramo.nota;
-                        }
-
-                        if (ramo.tipo && typeof ramo.tipo === "string") {
-                            div.classList.add(ramo.tipo.toLowerCase());
-                        }
-
-                        const todosAprobados = ramo.prerrequisitos?.every(prer =>
-                            estadoGuardado[prer] === "aprobado"
-                        );
-
-                        if (!todosAprobados && ramo.prerrequisitos?.length > 0) {
-                            div.classList.add("bloqueado");
-                            div.title = "Necesitas aprobar: " + ramo.prerrequisitos.join(", ");
-                        }
-
-                        div.onclick = () => {
-                            if (div.classList.contains("bloqueado")) return;
-
-                            const nota = prompt("¿Con qué nota aprobaste este ramo?", ramo.nota || "");
-                            if (nota) {
-                                div.className = `ramo aprobado`;
-                                if (ramo.tipo && typeof ramo.tipo === "string") {
-                                    div.classList.add(ramo.tipo.toLowerCase());
-                                }
-                                div.querySelector(".nota").textContent = nota;
-                                estadoGuardado[ramo.codigo] = "aprobado";
-                                localStorage.setItem("estadoMalla", JSON.stringify(estadoGuardado));
-                                location.reload();
-                            }
-                        };
-
-                        columna.appendChild(div);
-                    });
-
-                    contenedor.appendChild(columna);
+            // Primero identificamos todos los ramos aprobados
+            for (const semestre in data.semestres) {
+                data.semestres[semestre].forEach(ramo => {
+                    if (ramo.estado === 'aprobado') {
+                        aprobados.add(ramo.codigo);
+                    }
                 });
-        });
+            }
+
+            for (const semestre in data.semestres) {
+                const semestreDiv = document.createElement('div');
+                semestreDiv.classList.add('semestre');
+
+                const titulo = document.createElement('h2');
+                titulo.textContent = `Semestre ${semestre}`;
+                semestreDiv.appendChild(titulo);
+
+                data.semestres[semestre].forEach(ramo => {
+                    const ramoDiv = document.createElement('div');
+                    ramoDiv.classList.add('ramo', ramo.tipo);
+
+                    // Determina si está desbloqueado
+                    const desbloqueado = ramo.prerrequisitos.every(prereq => aprobados.has(prereq));
+
+                    if (ramo.estado === 'aprobado') {
+                        ramoDiv.classList.add('aprobado');
+                    } else if (!desbloqueado && ramo.prerrequisitos.length > 0) {
+                        ramoDiv.classList.add('bloqueado');
+                    } else if (ramo.estado === 'pendiente') {
+                        ramoDiv.classList.add('pendiente');
+                    }
+
+                    // Contenido del ramo
+                    ramoDiv.innerHTML = `
+                        <strong>${ramo.codigo}</strong><br>
+                        ${ramo.nombre}
+                    `;
+
+                    semestreDiv.appendChild(ramoDiv);
+                });
+
+                mallaDiv.appendChild(semestreDiv);
+            }
+        })
+        .catch(error => console.error('Error al cargar la malla:', error));
 });
+
