@@ -1,54 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('malla.json')
-        .then(response => response.json())
+document.addEventListener("DOMContentLoaded", () => {
+    const contenedor = document.getElementById("malla");
+    const estadoGuardado = JSON.parse(localStorage.getItem("estadoMalla")) || {};
+
+    fetch("malla.json")
+        .then(r => r.json())
         .then(data => {
-            const mallaDiv = document.getElementById('malla');
-            const aprobados = new Set(); // ramos aprobados para ir desbloqueando
+            Object.entries(data.semestres).forEach(([semestre, ramos]) => {
+                const columna = document.createElement("div");
+                columna.className = "semestre";
 
-            // Primero identificamos todos los ramos aprobados
-            for (const semestre in data.semestres) {
-                data.semestres[semestre].forEach(ramo => {
-                    if (ramo.estado === 'aprobado') {
-                        aprobados.add(ramo.codigo);
-                    }
-                });
-            }
-
-            for (const semestre in data.semestres) {
-                const semestreDiv = document.createElement('div');
-                semestreDiv.classList.add('semestre');
-
-                const titulo = document.createElement('h2');
+                const titulo = document.createElement("h2");
                 titulo.textContent = `Semestre ${semestre}`;
-                semestreDiv.appendChild(titulo);
+                columna.appendChild(titulo);
 
-                data.semestres[semestre].forEach(ramo => {
-                    const ramoDiv = document.createElement('div');
-                    ramoDiv.classList.add('ramo', ramo.tipo);
+                ramos.forEach(ramo => {
+                    const div = document.createElement("div");
+                    div.className = "ramo";
+                    div.id = ramo.codigo;
 
-                    // Determina si está desbloqueado
-                    const desbloqueado = ramo.prerrequisitos.every(prereq => aprobados.has(prereq));
+                    const guardado = estadoGuardado[ramo.codigo];
+                    const estado = typeof guardado === "object" ? guardado.estado : guardado || ramo.estado;
+                    const nota = typeof guardado === "object" ? guardado.nota : ramo.nota;
 
-                    if (ramo.estado === 'aprobado') {
-                        ramoDiv.classList.add('aprobado');
-                    } else if (!desbloqueado && ramo.prerrequisitos.length > 0) {
-                        ramoDiv.classList.add('bloqueado');
-                    } else if (ramo.estado === 'pendiente') {
-                        ramoDiv.classList.add('pendiente');
+                    div.innerHTML = `<strong>${ramo.codigo}</strong><br>${ramo.nombre}<br><small class="nota">${nota || ""}</small>`;
+                    div.classList.add(estado);
+                    if (ramo.tipo) {
+                        div.classList.add(ramo.tipo); // ← Esto le agrega la clase visual
                     }
 
-                    // Contenido del ramo
-                    ramoDiv.innerHTML = `
-                        <strong>${ramo.codigo}</strong><br>
-                        ${ramo.nombre}
-                    `;
+                    
+                    div.onclick = () => {
+                        const nuevaNota = prompt("¿Con qué nota aprobaste este ramo?", nota || "");
+                        if (nuevaNota) {
+                            div.className = "ramo aprobado";
+                            div.querySelector(".nota").textContent = nuevaNota;
+                            estadoGuardado[ramo.codigo] = {
+                                estado: "aprobado",
+                                nota: nuevaNota
+                            };
+                            localStorage.setItem("estadoMalla", JSON.stringify(estadoGuardado));
+                        }
+                    };
 
-                    semestreDiv.appendChild(ramoDiv);
+                    columna.appendChild(div);
                 });
 
-                mallaDiv.appendChild(semestreDiv);
-            }
-        })
-        .catch(error => console.error('Error al cargar la malla:', error));
+                contenedor.appendChild(columna);
+            });
+        });
 });
 
